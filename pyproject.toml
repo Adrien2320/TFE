@@ -1,0 +1,16 @@
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+tools = [
+    "black>=23.1.0",
+]
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Adrien", email = "Mertensadrien23@hotmail.be"},
+]
+dependencies = []
+requires-python = ">=3.10"
+license = {text = "MIT"}
