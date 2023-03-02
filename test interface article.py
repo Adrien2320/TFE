@@ -1,87 +1,74 @@
-import tkinter as tk
-import tkinter.constants as ctk
-from tkinter import ttk
+import ttkbootstrap as ttk
+import ttkbootstrap.constants as cttk
+class Article:
 
-
-class GuiArticle:
     def __init__(self):
-        self.root = tk.Tk()
-        self.root.geometry("720x480")
-        self.top_frame = tk.Frame(self.root, background="gray")
-        self.data_frame = tk.Frame(self.root, background="green")
-        self.down_frame = tk.Frame(self.root, background="brown")
+        self.root = ttk.Window(title="Facture Facile",themename="superhero",size=(1080,720))
+        self.menu_frame = ttk.Frame()
+        self.data_frame = ttk.Frame()
+        self.bottom_frame =ttk.Frame()
 
-        # pack of Frame
-        self.top_frame.pack(fill=ctk.BOTH)
-        self.data_frame.pack(fill=ctk.BOTH, expand=True)
-        self.down_frame.pack(fill=ctk.BOTH, expand=True)
+        self.menu_frame.pack(fill=cttk.BOTH)
+        self.data_frame.pack(fill=cttk.BOTH)
+        self.bottom_frame.pack(fill=cttk.BOTH)
 
-    ##############################################################
+        ########################################################
+        #menu_frame
+        bt_add = ttk.Button(self.menu_frame, text="AJOUTER", style="outline", width=25)
+        bt_change =ttk.Button(self.menu_frame, text="MODIFIER", style="outline", width=25)
+        bt_remove =ttk.Button(self.menu_frame, text="SUPPRIMER", style="outline", width=25)
+        bt_search = ttk.Button(self.menu_frame, text="RECHERCHER", style="outline", width=25)
 
-        # the widgets of top frame
-        self.bt_add = tk.Button(
-            self.top_frame,
-            text="AJOUTER",
-            width=20,
-            height=5,
-            border=5,
-            background="#99FF99",
-        )
-        self.bt_change = tk.Button(
-            self.top_frame,
-            text="MODIFIER",
-            width=20,
-            height=5,
-            border=5,
-            background="#FFCC99",
-        )
-        self.bt_remove = tk.Button(
-            self.top_frame,
-            text="SUPPRIMER",
-            width=20,
-            height=5,
-            border=5,
-            background="#FFFF99",
-        )
-        self.bt_search = tk.Button(
-            self.top_frame,
-            text="RECHERCHER",
-            width=20,
-            height=5,
-            border=5,
-            background="#E5CCFF",
-        )
+        bt_add.pack(side=cttk.LEFT,pady=20,padx=38)
+        bt_change.pack(side=cttk.LEFT)
+        bt_remove.pack(side=cttk.LEFT,pady=20,padx=38)
+        bt_search.pack(side=cttk.LEFT)
+        ########################################################
+        #data_frame
+        """
+        split of the data frame
+        """
+        top_frame = ttk.LabelFrame(self.data_frame, text="Données Important",height=50)
+        bottom_frame = ttk.LabelFrame(self.data_frame, text="Données Facultative")
+        top_frame.pack(side=cttk.TOP,fill=cttk.X,padx=20)
+        bottom_frame.pack(side=cttk.BOTTOM,fill=cttk.X,padx=20)
 
-        # pack of widgets of the top frame
-        self.bt_add.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
-        self.bt_change.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
-        self.bt_remove.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
-        self.bt_search.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
+        #top_frame
+        lb_name = ttk.Label(top_frame,text="NOM :")
+        entry_name = ttk.Entry(top_frame,width=50)
+        lb_prix_htva = ttk.Label(top_frame,text="Prix HTVA :")
+        entry_prix_htva = ttk.Entry(top_frame,width=20)
+        lb_taux_tva = ttk.Label(top_frame,text="Taux TVA :")
+        entry_taux_tva = ttk.Entry(top_frame,width=20)
 
-    ###################################################################################
-        #  the widgets of the text frame
-        self.lb_nom = tk.Label(self.data_frame, text="NOM:",width=10,height=2,background="#CCCCCC")
-        self.entry_nom = ttk.Entry(self.data_frame,width=30)
+            # pack
+        lb_name.pack(side=cttk.LEFT,padx=10,pady=20)
+        entry_name.pack(side=cttk.LEFT)
+        lb_prix_htva.pack(side=cttk.LEFT,padx=10)
+        entry_prix_htva.pack(side=cttk.LEFT)
+        lb_taux_tva.pack(side=cttk.LEFT,padx=10)
+        entry_taux_tva.pack(side=cttk.LEFT)
 
-        self.lb_prix_htva = tk.Label(self.data_frame, text="PRIX HTVA:", width=10, height=2, background="#CCCCCC")
-        self.entry_prix_htva = ttk.Entry(self.data_frame, width=10)
+        #bottom_frame
+        lb_description = ttk.Label(bottom_frame,text="Description:")
+        entry_description = ttk.Entry(bottom_frame,width=113)
+            #pack
+        lb_description.pack(side=cttk.LEFT,padx=10,pady=20)
+        entry_description.pack(side=cttk.LEFT)
 
-        self.lb_taux_tva = tk.Label(self.data_frame,text="TAUX TVA",width=10,height=2,background="#CCCCCC")
-        self.entry_taux_tva = ttk.Entry(self.data_frame, width=10)
+        #############################################################
+        #bottom_frame
 
-        self.lb_nom.grid(column=0,row=0,padx=5,pady=2)
-        self.entry_nom.grid(column=1,row=0)
-        self.lb_prix_htva.grid(column=2,row=0,padx=5,pady=2)
-        self.entry_prix_htva.grid(column=3,row=0)
-        self.lb_taux_tva.grid(column=4,row=0,padx=5,pady=2)
-        self.entry_taux_tva.grid(column=5,row=0)
+        bt_confirm = ttk.Button(self.bottom_frame,text="CONFIRMER",style="success")
+        bt_back = ttk.Button(self.bottom_frame,text="RETOUR",style="danger")
 
-    #################################################################################
+        bt_confirm.pack(side=cttk.RIGHT,pady=20,padx=38)
+        bt_back.pack(side=cttk.LEFT,pady=20,padx=38)
 
-    def start_gui_article(self):
+
+    def start_article(self):
         self.root.mainloop()
 
-
-if __name__ == "__main__":
-    window = GuiArticle()
-    window.start_gui_article()
+if __name__ == '__main__':
+    app = Article()
+    app.start_article()
