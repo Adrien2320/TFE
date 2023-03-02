@@ -71,8 +71,8 @@ class Article:
         bt_confirm = ttk.Button(self.bottom_frame,text="CONFIRMER",style="success""Outline.TButton",width=25)
         bt_back = ttk.Button(self.bottom_frame,text="RETOUR",style="danger""Outline.TButton",width=25)
 
-        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=38)
-        bt_back.pack(side=cttk.LEFT,pady=40,padx=38)
+        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=40)
+        bt_back.pack(side=cttk.LEFT,pady=40,padx=40)
 
 
     def start_article(self):
