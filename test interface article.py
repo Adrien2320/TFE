@@ -4,6 +4,7 @@ class Article:
 
     def __init__(self):
         self.root = ttk.Window(title="Facture Facile",themename="superhero",size=(1080,720))
+        self.root.resizable(False,False)
         self.menu_frame = ttk.Frame()
         self.data_frame = ttk.Frame()
         self.bottom_frame =ttk.Frame()
@@ -13,15 +14,19 @@ class Article:
         self.bottom_frame.pack(fill=cttk.BOTH)
 
         ########################################################
-        #menu_frame
-        bt_add = ttk.Button(self.menu_frame, text="AJOUTER", style="outline", width=25)
-        bt_change =ttk.Button(self.menu_frame, text="MODIFIER", style="outline", width=25)
-        bt_remove =ttk.Button(self.menu_frame, text="SUPPRIMER", style="outline", width=25)
-        bt_search = ttk.Button(self.menu_frame, text="RECHERCHER", style="outline", width=25)
+            #style
+        style_menu=ttk.Style()
+        style_menu.configure('Outline.TButton',font=("Helvitica",21))
 
-        bt_add.pack(side=cttk.LEFT,pady=20,padx=38)
+        #menu_frame
+        bt_add = ttk.Button(self.menu_frame, text="AJOUTER", style="Outline.TButton")
+        bt_change =ttk.Button(self.menu_frame, text="MODIFIER", style="Outline.TButton")
+        bt_remove =ttk.Button(self.menu_frame, text="SUPPRIMER", style="Outline.TButton")
+        bt_search = ttk.Button(self.menu_frame, text="RECHERCHER", style="Outline.TButton")
+        #pack
+        bt_add.pack(side=cttk.LEFT,pady=60,padx=38)
         bt_change.pack(side=cttk.LEFT)
-        bt_remove.pack(side=cttk.LEFT,pady=20,padx=38)
+        bt_remove.pack(side=cttk.LEFT,pady=60,padx=38)
         bt_search.pack(side=cttk.LEFT)
         ########################################################
         #data_frame
