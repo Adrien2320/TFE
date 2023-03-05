@@ -6,8 +6,8 @@ class Article:
         self.root = ttk.Window(title="Facture Facile",themename="superhero")
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
-        app_width = 920
-        app_height = 480
+        app_width = 1100
+        app_height = 500
         pos_screen_width = (screen_width//2)- (app_width//2)
         pos_screen_height = (screen_height//2) - (app_height//2)
         self.root.geometry(f"{app_width}x{app_height}+{pos_screen_width}+{pos_screen_height}")
@@ -40,14 +40,14 @@ class Article:
         """
         split of the data frame
         """
-        top_frame = ttk.LabelFrame(self.data_frame, text="Données Important",height=50)
+        top_frame = ttk.LabelFrame(self.data_frame, text="Données Important")
         bottom_frame = ttk.LabelFrame(self.data_frame, text="Données Facultative")
         top_frame.pack(side=cttk.TOP,fill=cttk.X,padx=20)
         bottom_frame.pack(side=cttk.BOTTOM,fill=cttk.X,padx=20)
 
         #style
         style_data_label=ttk.Style()
-        style_data_label.configure('TLabel',font=("Helvitica",16))
+        style_data_label.configure('TLabel',font=("Helvitica",25))
 
         #top_frame
         lb_name = ttk.Label(top_frame,text="Nom :",style="TLabel")
@@ -58,7 +58,7 @@ class Article:
         entry_taux_tva = ttk.Entry(top_frame,width=20)
 
             # pack
-        lb_name.pack(side=cttk.LEFT,padx=10,pady=10)
+        lb_name.pack(side=cttk.LEFT,padx=10,pady=30)
         entry_name.pack(side=cttk.LEFT,expand=True,fill=cttk.X)
         lb_prix_htva.pack(side=cttk.LEFT,padx=10)
         entry_prix_htva.pack(side=cttk.LEFT)
@@ -69,7 +69,7 @@ class Article:
         lb_description = ttk.Label(bottom_frame,text="Description:")
         entry_description = ttk.Entry(bottom_frame)
             #pack
-        lb_description.pack(side=cttk.LEFT,padx=10,pady=20)
+        lb_description.pack(side=cttk.LEFT,padx=10,pady=30)
         entry_description.pack(side=cttk.LEFT,expand=True,fill=cttk.X,padx=10)
 
         #############################################################
@@ -78,7 +78,7 @@ class Article:
         bt_confirm = ttk.Button(self.bottom_frame,text="CONFIRMER",style="success""Outline.TButton",width=25)
         bt_back = ttk.Button(self.bottom_frame,text="RETOUR",style="danger""Outline.TButton",width=25)
 
-        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=40)
+        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=40,expand=True)
         bt_back.pack(side=cttk.LEFT,pady=40,padx=40,expand=True)
 
 
