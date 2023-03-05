@@ -37,7 +37,7 @@ class Menu(ttk.Frame):
 
     def create_widgets(self):
         style_menu = ttk.Style()
-        style_menu.configure("Outline.TButton", font=("Helvitica", 21))
+        style_menu.configure("Outline.TButton", font=("Helvitica", 20))
 
         # menu_frame
         bt_add = ttk.Button(self, text="AJOUTER", style="Outline.TButton")
@@ -62,7 +62,7 @@ class DataArticle(ttk.Frame):
     class TopFrame(ttk.LabelFrame):
         def __init__(self, parent, title: str):
             super().__init__(parent, text=title)
-            self.pack(side=cttk.TOP, fill=cttk.X, padx=20)
+            self.pack(side=cttk.TOP, fill=cttk.X, padx=20,pady=10)
             self.create_widgets()
 
         def create_widgets(self):
@@ -89,7 +89,7 @@ class DataArticle(ttk.Frame):
     class BottomFrame(ttk.LabelFrame):
         def __init__(self, parent, title: str):
             super().__init__(parent, text=title)
-            self.pack(side=cttk.TOP, fill=cttk.X, padx=20)
+            self.pack(side=cttk.TOP, fill=cttk.X, padx=20,pady=10)
             self.create_widgets()
 
         def create_widgets(self):
@@ -116,8 +116,8 @@ class MenuOption(ttk.Frame):
             self, text="RETOUR", style="danger" "Outline.TButton", width=25
         )
 
-        bt_confirm.pack(side=cttk.RIGHT, pady=40, padx=40, expand=True)
-        bt_back.pack(side=cttk.LEFT, pady=40, padx=40, expand=True)
+        bt_confirm.pack(side=cttk.RIGHT, pady=20, padx=40, expand=True)
+        bt_back.pack(side=cttk.LEFT, pady=20, padx=40, expand=True)
 
 
 if __name__ == "__main__":
