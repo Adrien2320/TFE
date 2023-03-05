@@ -16,9 +16,9 @@ class Article:
         self.data_frame = ttk.Frame()
         self.bottom_frame =ttk.Frame()
 
-        self.menu_frame.pack(fill=cttk.BOTH)
-        self.data_frame.pack(fill=cttk.BOTH)
-        self.bottom_frame.pack(fill=cttk.BOTH)
+        self.menu_frame.pack(fill=cttk.BOTH,expand=True)
+        self.data_frame.pack(fill=cttk.BOTH,expand=True)
+        self.bottom_frame.pack(fill=cttk.BOTH,expand=True)
 
         ########################################################
             #style
@@ -31,10 +31,10 @@ class Article:
         bt_remove =ttk.Button(self.menu_frame, text="SUPPRIMER", style="Outline.TButton")
         bt_search = ttk.Button(self.menu_frame, text="RECHERCHER", style="Outline.TButton")
         #pack
-        bt_add.pack(side=cttk.LEFT,pady=40,padx=38)
-        bt_change.pack(side=cttk.LEFT)
-        bt_remove.pack(side=cttk.LEFT,pady=40,padx=38)
-        bt_search.pack(side=cttk.LEFT)
+        bt_add.pack(side=cttk.LEFT,pady=40,expand=True)
+        bt_change.pack(side=cttk.LEFT,expand=True)
+        bt_remove.pack(side=cttk.LEFT,pady=40,expand=True)
+        bt_search.pack(side=cttk.LEFT,expand=True)
         ########################################################
         #data_frame
         """
@@ -58,12 +58,12 @@ class Article:
         entry_taux_tva = ttk.Entry(top_frame,width=20)
 
             # pack
-        lb_name.pack(side=cttk.LEFT,padx=10,pady=20)
-        entry_name.pack(side=cttk.LEFT)
-        lb_prix_htva.pack(side=cttk.LEFT,padx=10)
-        entry_prix_htva.pack(side=cttk.LEFT)
-        lb_taux_tva.pack(side=cttk.LEFT,padx=10)
-        entry_taux_tva.pack(side=cttk.LEFT)
+        lb_name.pack(side=cttk.LEFT,padx=10,pady=10,expand=True)
+        entry_name.pack(side=cttk.LEFT,expand=True)
+        lb_prix_htva.pack(side=cttk.LEFT,padx=10,expand=True)
+        entry_prix_htva.pack(side=cttk.LEFT,expand=True)
+        lb_taux_tva.pack(side=cttk.LEFT,padx=10,expand=True)
+        entry_taux_tva.pack(side=cttk.LEFT,expand=True)
 
         #bottom_frame
         lb_description = ttk.Label(bottom_frame,text="Description:")
@@ -78,8 +78,8 @@ class Article:
         bt_confirm = ttk.Button(self.bottom_frame,text="CONFIRMER",style="success""Outline.TButton",width=25)
         bt_back = ttk.Button(self.bottom_frame,text="RETOUR",style="danger""Outline.TButton",width=25)
 
-        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=40)
-        bt_back.pack(side=cttk.LEFT,pady=40,padx=40)
+        bt_confirm.pack(side=cttk.RIGHT,pady=40,padx=40,expand=True)
+        bt_back.pack(side=cttk.LEFT,pady=40,padx=40,expand=True)
 
 
     def start_article(self):
