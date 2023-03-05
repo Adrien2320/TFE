@@ -3,7 +3,14 @@ import ttkbootstrap.constants as cttk
 class Article:
 
     def __init__(self):
-        self.root = ttk.Window(title="Facture Facile",themename="superhero",size=(1080,480))
+        self.root = ttk.Window(title="Facture Facile",themename="superhero")
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+        app_width = 920
+        app_height = 480
+        pos_screen_width = (screen_width//2)- (app_width//2)
+        pos_screen_height = (screen_height//2) - (app_height//2)
+        self.root.geometry(f"{app_width}x{app_height}+{pos_screen_width}+{pos_screen_height}")
         self.root.resizable(False,False)
         self.menu_frame = ttk.Frame()
         self.data_frame = ttk.Frame()
