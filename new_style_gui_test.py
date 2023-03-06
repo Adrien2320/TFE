@@ -48,19 +48,28 @@ class Menu(ttk.Frame):
         # style of bt_change
         style_menu_change = ttk.Style()
         style_menu_change.configure(
-            "bt_change.Outline.TButton", font=menu_bt_font, background="#FFCC99",foreground="#646464",
+            "bt_change.Outline.TButton",
+            font=menu_bt_font,
+            background="#FFCC99",
+            foreground="#646464",
             bordercolor="#FFCC99",
         )
         # style of bt_remove
         style_menu_remove = ttk.Style()
         style_menu_remove.configure(
-            "bt_remove.Outline.TButton", font=menu_bt_font, background="#FFFF99",foreground="#646464",
+            "bt_remove.Outline.TButton",
+            font=menu_bt_font,
+            background="#FFFF99",
+            foreground="#646464",
             bordercolor="#FFFF99",
         )
         # style of bt_search
         style_menu_remove = ttk.Style()
         style_menu_remove.configure(
-            "bt_search.Outline.TButton", font=menu_bt_font, background="#E5CCFF",foreground="#646464",
+            "bt_search.Outline.TButton",
+            font=menu_bt_font,
+            background="#E5CCFF",
+            foreground="#646464",
             bordercolor="#E5CCFF",
         )
 
@@ -96,15 +105,23 @@ class DataArticle(ttk.Frame):
 
         def create_widgets(self):
             # style
+            font_universal = ("Helvitica", 20)
+            #style of all the Labels
             style_data_label = ttk.Style()
-            style_data_label.configure("TLabel", font=("Helvitica", 20))
+            style_data_label.configure("TLabel", font=font_universal)
+            # résoudre problème pour entry la taille écriture
+            """
+            # style of all the entrys
+            style_data_entry = ttk.Style()
+            style_data_entry.configure("TEntry", font=font_universal)
+            """
 
             # top_frame
             lb_name = ttk.Label(self, text="Nom :", style="TLabel")
             entry_name = ttk.Entry(self)
-            lb_prix_htva = ttk.Label(self, text="Prix HTVA :")
+            lb_prix_htva = ttk.Label(self, text="Prix HTVA :", style="TLabel")
             entry_prix_htva = ttk.Entry(self, width=20)
-            lb_taux_tva = ttk.Label(self, text="Taux TVA :")
+            lb_taux_tva = ttk.Label(self, text="Taux TVA :", style="TLabel")
             entry_taux_tva = ttk.Entry(self, width=20)
 
             # pack
