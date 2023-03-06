@@ -1,4 +1,3 @@
-import tkinter as tk
 import ttkbootstrap as ttk
 import ttkbootstrap.constants as cttk
 
@@ -36,19 +35,49 @@ class Menu(ttk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        style_menu = ttk.Style()
-        style_menu.configure("Outline.TButton", font=("Helvitica", 20))
+        menu_bt_font = ("Helvitica", 20)
+        # style of bt_add
+        style_menu_add = ttk.Style()
+        style_menu_add.configure(
+            "bt_add.Outline.TButton",
+            font=menu_bt_font,
+            background="#99FF99",
+            foreground="#646464",
+            bordercolor="#99FF99",
+        )
+        # style of bt_change
+        style_menu_change = ttk.Style()
+        style_menu_change.configure(
+            "bt_change.Outline.TButton", font=menu_bt_font, background="#FFCC99",foreground="#646464",
+            bordercolor="#FFCC99",
+        )
+        # style of bt_remove
+        style_menu_remove = ttk.Style()
+        style_menu_remove.configure(
+            "bt_remove.Outline.TButton", font=menu_bt_font, background="#FFFF99",foreground="#646464",
+            bordercolor="#FFFF99",
+        )
+        # style of bt_search
+        style_menu_remove = ttk.Style()
+        style_menu_remove.configure(
+            "bt_search.Outline.TButton", font=menu_bt_font, background="#E5CCFF",foreground="#646464",
+            bordercolor="#E5CCFF",
+        )
 
         # menu_frame
-        bt_add = ttk.Button(self, text="AJOUTER", style="Outline.TButton")
-        bt_change = ttk.Button(self, text="MODIFIER", style="Outline.TButton")
-        bt_remove = ttk.Button(self, text="SUPPRIMER", style="Outline.TButton")
-        bt_search = ttk.Button(self, text="RECHERCHER", style="Outline.TButton")
+        bt_add = ttk.Button(self, text="AJOUTER", style="bt_add.Outline.TButton")
+        bt_change = ttk.Button(self, text="MODIFIER", style="bt_change.Outline.TButton")
+        bt_remove = ttk.Button(
+            self, text="SUPPRIMER", style="bt_remove.Outline.TButton"
+        )
+        bt_search = ttk.Button(
+            self, text="RECHERCHER", style="bt_search.Outline.TButton"
+        )
         # pack
-        bt_add.pack(side=cttk.LEFT, pady=40, expand=True, fill=cttk.X, padx=10)
-        bt_change.pack(side=cttk.LEFT, expand=True, fill=cttk.X, padx=10)
-        bt_remove.pack(side=cttk.LEFT, pady=40, expand=True, fill=cttk.X, padx=10)
-        bt_search.pack(side=cttk.LEFT, expand=True, fill=cttk.X, padx=10)
+        bt_add.pack(side=cttk.LEFT, expand=True, fill=cttk.BOTH, padx=10, pady=30)
+        bt_change.pack(side=cttk.LEFT, expand=True, fill=cttk.BOTH, padx=10, pady=30)
+        bt_remove.pack(side=cttk.LEFT, expand=True, fill=cttk.BOTH, padx=10, pady=30)
+        bt_search.pack(side=cttk.LEFT, expand=True, fill=cttk.BOTH, padx=10, pady=30)
 
 
 class DataArticle(ttk.Frame):
@@ -62,13 +91,13 @@ class DataArticle(ttk.Frame):
     class TopFrame(ttk.LabelFrame):
         def __init__(self, parent, title: str):
             super().__init__(parent, text=title)
-            self.pack(side=cttk.TOP, fill=cttk.X, padx=20,pady=10)
+            self.pack(side=cttk.TOP, fill=cttk.X, padx=20, pady=10)
             self.create_widgets()
 
         def create_widgets(self):
             # style
             style_data_label = ttk.Style()
-            style_data_label.configure("TLabel", font=("Helvitica", 25))
+            style_data_label.configure("TLabel", font=("Helvitica", 20))
 
             # top_frame
             lb_name = ttk.Label(self, text="Nom :", style="TLabel")
@@ -89,7 +118,7 @@ class DataArticle(ttk.Frame):
     class BottomFrame(ttk.LabelFrame):
         def __init__(self, parent, title: str):
             super().__init__(parent, text=title)
-            self.pack(side=cttk.TOP, fill=cttk.X, padx=20,pady=10)
+            self.pack(side=cttk.TOP, fill=cttk.X, padx=20, pady=10)
             self.create_widgets()
 
         def create_widgets(self):
@@ -116,10 +145,10 @@ class MenuOption(ttk.Frame):
             self, text="RETOUR", style="danger" "Outline.TButton", width=25
         )
 
-        bt_confirm.pack(side=cttk.RIGHT, pady=20, padx=40, expand=True)
-        bt_back.pack(side=cttk.LEFT, pady=20, padx=40, expand=True)
+        bt_confirm.pack(side=cttk.RIGHT, fill=cttk.BOTH, pady=20, padx=40, expand=True)
+        bt_back.pack(side=cttk.LEFT, fill=cttk.BOTH, pady=20, padx=40, expand=True)
 
 
 if __name__ == "__main__":
-    easy_invoice = App("Facture Facile", (1100, 500), "superhero")
+    easy_invoice = App("Facture Facile", (1100, 550), "superhero")
     easy_invoice.start_app()

@@ -16,7 +16,7 @@ class GuiArticle:
         self.data_frame.pack(fill=ctk.BOTH, expand=True)
         self.down_frame.pack(fill=ctk.BOTH, expand=True)
 
-    ##############################################################
+        ##############################################################
 
         # the widgets of top frame
         self.bt_add = tk.Button(
@@ -58,23 +58,29 @@ class GuiArticle:
         self.bt_remove.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
         self.bt_search.pack(side=ctk.LEFT, padx=10, pady=10, fill=ctk.BOTH, expand=True)
 
-    ###################################################################################
+        ###################################################################################
         #  the widgets of the text frame
-        self.lb_nom = tk.Label(self.data_frame, text="NOM:",width=10,height=2,background="#CCCCCC")
-        self.entry_nom = ttk.Entry(self.data_frame,width=30)
+        self.lb_nom = tk.Label(
+            self.data_frame, text="NOM:", width=10, height=2, background="#CCCCCC"
+        )
+        self.entry_nom = ttk.Entry(self.data_frame, width=30)
 
-        self.lb_prix_htva = tk.Label(self.data_frame, text="PRIX HTVA:", width=10, height=2, background="#CCCCCC")
+        self.lb_prix_htva = tk.Label(
+            self.data_frame, text="PRIX HTVA:", width=10, height=2, background="#CCCCCC"
+        )
         self.entry_prix_htva = ttk.Entry(self.data_frame, width=10)
 
-        self.lb_taux_tva = tk.Label(self.data_frame,text="TAUX TVA",width=10,height=2,background="#CCCCCC")
+        self.lb_taux_tva = tk.Label(
+            self.data_frame, text="TAUX TVA", width=10, height=2, background="#CCCCCC"
+        )
         self.entry_taux_tva = ttk.Entry(self.data_frame, width=10)
 
-        self.lb_nom.grid(column=0,row=0,padx=5,pady=2)
-        self.entry_nom.grid(column=1,row=0)
-        self.lb_prix_htva.grid(column=2,row=0,padx=5,pady=2)
-        self.entry_prix_htva.grid(column=3,row=0)
-        self.lb_taux_tva.grid(column=4,row=0,padx=5,pady=2)
-        self.entry_taux_tva.grid(column=5,row=0)
+        self.lb_nom.grid(column=0, row=0, padx=5, pady=2)
+        self.entry_nom.grid(column=1, row=0)
+        self.lb_prix_htva.grid(column=2, row=0, padx=5, pady=2)
+        self.entry_prix_htva.grid(column=3, row=0)
+        self.lb_taux_tva.grid(column=4, row=0, padx=5, pady=2)
+        self.entry_taux_tva.grid(column=5, row=0)
 
     #################################################################################
 
